@@ -1,110 +1,119 @@
 <svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <radialGradient id="bgRadial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(512 380) rotate(90) scale(740)">
-      <stop offset="0" stop-color="#0F2B5C"/>
-      <stop offset="1" stop-color="#0A0F1F"/>
+    <radialGradient id="bgGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(512 460) rotate(90) scale(620)">
+      <stop offset="0" stop-color="#193F9D"/>
+      <stop offset="0.45" stop-color="#0E1D56"/>
+      <stop offset="1" stop-color="#050813"/>
     </radialGradient>
 
-    <linearGradient id="arrowGrad" x1="300" y1="720" x2="724" y2="720" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#2F80FF"/>
-      <stop offset="1" stop-color="#00C6FF"/>
+    <linearGradient id="panelEdge" x1="120" y1="180" x2="904" y2="880" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5D89FF" stop-opacity="0.48"/>
+      <stop offset="1" stop-color="#1B2B7D" stop-opacity="0.2"/>
     </linearGradient>
 
+    <linearGradient id="arrowStroke" x1="240" y1="512" x2="784" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#59CBFF"/>
+      <stop offset="0.55" stop-color="#4FA9FF"/>
+      <stop offset="1" stop-color="#57D4FF"/>
+    </linearGradient>
+
+    <radialGradient id="arrowHalo" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(512 620) rotate(90) scale(330 370)">
+      <stop offset="0" stop-color="#4AA3FF" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#4AA3FF" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="boxFront" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#C78D52"/>
+      <stop offset="1" stop-color="#A86F3F"/>
+    </linearGradient>
     <linearGradient id="boxTop" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#E9BE88"/>
-      <stop offset="1" stop-color="#D39A64"/>
+      <stop offset="0" stop-color="#E3BA7D"/>
+      <stop offset="1" stop-color="#C3884E"/>
     </linearGradient>
-    <linearGradient id="boxLeft" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#BF7E48"/>
-      <stop offset="1" stop-color="#9A633B"/>
-    </linearGradient>
-    <linearGradient id="boxRight" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#C68854"/>
-      <stop offset="1" stop-color="#A06A42"/>
+    <linearGradient id="boxSide" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8B5A37"/>
+      <stop offset="1" stop-color="#6C452A"/>
     </linearGradient>
 
-    <linearGradient id="palletTop" x1="402" y1="620" x2="622" y2="710" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#A96C3D"/>
-      <stop offset="1" stop-color="#7E4E2D"/>
-    </linearGradient>
-    <linearGradient id="palletSide" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#6B4025"/>
-      <stop offset="1" stop-color="#55321D"/>
+    <linearGradient id="palletTop" x1="366" y1="632" x2="658" y2="738" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A56E3E"/>
+      <stop offset="1" stop-color="#734927"/>
     </linearGradient>
 
     <filter id="panelShadow" x="0" y="0" width="1024" height="1024" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="20" stdDeviation="32" flood-color="#000000" flood-opacity="0.45"/>
+      <feDropShadow dx="0" dy="18" stdDeviation="28" flood-color="#000000" flood-opacity="0.45"/>
     </filter>
 
-    <filter id="arrowGlow" x="110" y="520" width="804" height="290" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <filter id="softGlow" x="120" y="240" width="784" height="600" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="8"/>
     </filter>
 
-    <filter id="softShadow" x="350" y="690" width="324" height="98" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feGaussianBlur stdDeviation="14"/>
+    <filter id="starGlow" x="0" y="0" width="1024" height="1024" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="1.8"/>
     </filter>
   </defs>
 
+  <rect width="1024" height="1024" fill="#02040C"/>
+
   <g filter="url(#panelShadow)">
-    <rect x="64" y="64" width="896" height="896" rx="210" fill="url(#bgRadial)"/>
+    <rect x="76" y="76" width="872" height="872" rx="198" fill="url(#bgGlow)"/>
+    <rect x="78" y="78" width="868" height="868" rx="196" stroke="url(#panelEdge)" stroke-width="4"/>
   </g>
 
-  <ellipse cx="512" cy="740" rx="132" ry="28" fill="#000000" fill-opacity="0.36" filter="url(#softShadow)"/>
-
-  <!-- Arrows from orphan boxes toward center -->
-  <g filter="url(#arrowGlow)" stroke="url(#arrowGrad)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M270 748C314 706 350 678 404 658"/>
-    <path d="M754 748C710 706 674 678 620 658"/>
+  <g opacity="0.86" filter="url(#starGlow)" fill="#67B7FF">
+    <circle cx="300" cy="330" r="2.5"/><circle cx="340" cy="292" r="2.2"/><circle cx="396" cy="312" r="2.4"/>
+    <circle cx="260" cy="420" r="2.2"/><circle cx="730" cy="300" r="2.4"/><circle cx="776" cy="350" r="2.8"/>
+    <circle cx="700" cy="400" r="2.2"/><circle cx="640" cy="308" r="2.1"/><circle cx="588" cy="270" r="2.2"/>
+    <circle cx="426" cy="272" r="2.2"/><circle cx="494" cy="254" r="2.4"/><circle cx="820" cy="384" r="2"/>
+    <circle cx="226" cy="372" r="2.1"/><circle cx="352" cy="384" r="2.2"/><circle cx="414" cy="364" r="1.8"/>
+    <circle cx="598" cy="338" r="2.1"/><circle cx="534" cy="336" r="1.9"/><circle cx="760" cy="438" r="1.9"/>
   </g>
 
-  <g fill="#00C6FF" opacity="0.95">
-    <path d="M398 646L410 670L428 649Z"/>
-    <path d="M626 646L614 670L596 649Z"/>
+  <ellipse cx="512" cy="700" rx="278" ry="140" fill="url(#arrowHalo)"/>
+
+  <g filter="url(#softGlow)" fill="none" stroke="url(#arrowStroke)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M264 620C274 500 358 430 500 430C642 430 744 494 754 620"/>
+    <path d="M752 622C734 756 628 824 506 824C382 824 290 790 270 726"/>
   </g>
 
-  <!-- Central pallet -->
+  <g fill="#59C7FF" opacity="0.97">
+    <path d="M760 626L730 610L734 644Z"/>
+    <path d="M268 730L300 718L288 748Z"/>
+    <path d="M264 620L296 636L292 604Z"/>
+  </g>
+
   <g>
-    <polygon points="392,650 512,612 632,650 512,688" fill="url(#palletTop)"/>
-    <polygon points="392,650 512,688 512,718 392,682" fill="url(#palletSide)"/>
-    <polygon points="632,650 512,688 512,718 632,682" fill="#674027"/>
-
-    <rect x="444" y="653" width="20" height="26" rx="4" fill="#6A3F23"/>
-    <rect x="502" y="671" width="20" height="26" rx="4" fill="#6A3F23"/>
-    <rect x="560" y="653" width="20" height="26" rx="4" fill="#6A3F23"/>
+    <polygon points="330,632 512,580 694,632 512,686" fill="url(#palletTop)"/>
+    <polygon points="330,632 512,686 512,728 330,676" fill="#6A4024"/>
+    <polygon points="694,632 512,686 512,728 694,676" fill="#56331E"/>
+    <rect x="380" y="652" width="28" height="26" rx="4" fill="#61371F"/>
+    <rect x="498" y="684" width="28" height="26" rx="4" fill="#61371F"/>
+    <rect x="618" y="652" width="28" height="26" rx="4" fill="#61371F"/>
   </g>
 
-  <!-- Cube symbol definition: size 48 -->
-  <g id="cube">
-    <polygon points="0,0 24,-12 48,0 24,12" fill="url(#boxTop)"/>
-    <polygon points="0,0 24,12 24,44 0,30" fill="url(#boxLeft)"/>
-    <polygon points="48,0 24,12 24,44 48,30" fill="url(#boxRight)"/>
+  <g id="crate">
+    <polygon points="0,0 60,-22 120,0 60,22" fill="url(#boxTop)"/>
+    <polygon points="0,0 60,22 60,96 0,68" fill="url(#boxFront)"/>
+    <polygon points="120,0 60,22 60,96 120,68" fill="url(#boxSide)"/>
+    <rect x="68" y="14" width="18" height="24" fill="#6C4128" opacity="0.35"/>
+    <rect x="16" y="48" width="22" height="14" fill="#8B5E3A" opacity="0.35"/>
   </g>
 
-  <!-- 3x3 stacked boxes (minimal isometric arrangement) -->
-  <g transform="translate(440 472)">
-    <!-- Back row -->
-    <use href="#cube" x="48" y="0"/>
-    <use href="#cube" x="96" y="24"/>
-    <use href="#cube" x="0" y="24"/>
-    <!-- Middle row -->
-    <use href="#cube" x="48" y="48"/>
-    <use href="#cube" x="96" y="72"/>
-    <use href="#cube" x="0" y="72"/>
-    <!-- Front row -->
-    <use href="#cube" x="48" y="96"/>
-    <use href="#cube" x="96" y="120"/>
-    <use href="#cube" x="0" y="120"/>
+  <g transform="translate(352 414)">
+    <use href="#crate" x="160" y="0"/>
+    <use href="#crate" x="64" y="42"/>
+    <use href="#crate" x="256" y="42"/>
+    <use href="#crate" x="160" y="84"/>
+    <use href="#crate" x="64" y="126"/>
+    <use href="#crate" x="256" y="126"/>
+    <use href="#crate" x="160" y="168"/>
   </g>
 
-  <!-- Orphan boxes -->
-  <g transform="translate(230 738) scale(0.85)">
-    <use href="#cube"/>
+  <g transform="translate(190 742) scale(0.96)">
+    <use href="#crate"/>
   </g>
-  <g transform="translate(753 738) scale(0.85)">
-    <use href="#cube"/>
+
+  <g transform="translate(710 742) scale(0.96)">
+    <use href="#crate"/>
   </g>
 </svg>
