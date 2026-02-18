@@ -126,7 +126,7 @@ body {
 }
 
 .content {
-  padding: 14px;
+  padding: 18px 14px 14px;
   padding-bottom: 84px;
 }
 
@@ -201,13 +201,33 @@ body {
 }
 
 .report-grid.single-chart {
-  grid-template-columns: minmax(250px, 1fr);
-  justify-items: center;
+  grid-template-columns: minmax(230px, 1fr) auto;
+  align-items: center;
+  justify-items: stretch;
 }
 
 .single-chart .chart {
   width: 100%;
-  max-width: 360px;
+  max-width: 330px;
+}
+
+.location-strip {
+  display: grid;
+  gap: 10px;
+  justify-items: end;
+}
+
+.location-pill {
+  min-width: 92px;
+  border-radius: 7px;
+  border: 1px solid #d4dbe7;
+  background: linear-gradient(180deg, #f7fbff, #eaf2fc);
+  color: #1f2c43;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  padding: 7px 10px;
+  box-shadow: 0 4px 10px rgba(15, 39, 72, 0.12);
 }
 
 .chart {
@@ -284,7 +304,7 @@ body {
   position: sticky;
   bottom: 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   background: #fff;
   border-top: 1px solid #d5dce8;
   box-shadow: 0 -5px 15px rgba(10, 39, 75, 0.12), 0 0 10px rgba(36, 200, 255, 0.2);
@@ -330,4 +350,8 @@ body {
 @media (max-width: 380px) {
   .label { font-size: 18px; }
   .hero h1 { font-size: 40px; }
+  .location-pill {
+    min-width: 78px;
+    font-size: 12px;
+  }
 }
