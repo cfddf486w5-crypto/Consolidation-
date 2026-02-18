@@ -186,6 +186,19 @@ body {
   object-fit: contain;
 }
 
+.tile-icon.artwork-icon {
+  padding: 0;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.tile-icon.artwork-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .label {
   font-weight: 700;
   font-size: 22px;
