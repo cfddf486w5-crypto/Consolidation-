@@ -9,24 +9,61 @@
 <body>
   <div class="phone">
     <div class="screen">
-      <div class="status-bar"><span>9:41</span><span>▮▮▮ ◠</span></div>
+      <div class="status-bar"><span>9:41</span><span>5G 100%</span></div>
       <header class="header">
         <div class="header-top">
-          <div class="menu-btn">☰</div>
+          <button class="icon-btn" aria-label="Menu">
+            <span class="line"></span><span class="line"></span><span class="line"></span>
+          </button>
           <div>WH01 - John <strong>WMS Tools</strong></div>
-          <div class="bell-wrap"><div class="bell">🔔</div><div class="badge">3</div></div>
+          <div class="bell-wrap">
+            <button class="icon-btn" aria-label="Notifications">🔔</button>
+            <div class="badge">3</div>
+          </div>
         </div>
       </header>
-      <div class="hero">WMS Tools</div>
+
+      <div class="hero">
+        <h1>WMS Tools</h1>
+        <p>Tableau principal mobile</p>
+      </div>
 
       <main class="content">
         <section class="tiles">
-          <a class="tile" href="index.html"><div class="icon">📦</div><div class="label">Consolidation</div></a>
-          <a class="tile" href="stock.html"><div class="icon">📋</div><div class="label">Inventaire</div></a>
-          <a class="tile" href="tasks.html"><div class="icon">🔎</div><div class="label">Suivi Expédition</div></a>
-          <a class="tile" href="stock.html"><div class="icon">↩️</div><div class="label">Remise en Stock</div></a>
-          <a class="tile" href="more.html"><div class="icon">🗺️</div><div class="label">Layout</div></a>
-          <a class="tile" href="tasks.html"><div class="icon">✅</div><div class="label">Réception ASN</div></a>
+          <a class="tile" id="tile-dashboard" href="index.html">
+            <div class="icon-box package" aria-hidden="true">
+              <span class="cube-top"></span>
+              <span class="cube-face"></span>
+            </div>
+            <div class="label">Consolidation</div>
+          </a>
+          <a class="tile" id="tile-stock" href="stock.html">
+            <div class="icon-box list" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="label">Inventaire</div>
+          </a>
+          <a class="tile" id="tile-tasks" href="tasks.html">
+            <div class="icon-box scanner" aria-hidden="true">
+              <span class="beam"></span>
+              <span class="scanner-slot"></span>
+            </div>
+            <div class="label">Suivi Expédition</div>
+          </a>
+          <a class="tile" href="stock.html">
+            <div class="icon-box arrow" aria-hidden="true"><span>↩</span></div>
+            <div class="label">Remise en Stock</div>
+          </a>
+          <a class="tile" id="tile-more" href="more.html">
+            <div class="icon-box map" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="label">Layout</div>
+          </a>
+          <a class="tile" href="tasks.html">
+            <div class="icon-box check" aria-hidden="true"><span>✓</span></div>
+            <div class="label">Réception ASN</div>
+          </a>
         </section>
 
         <section class="report">
@@ -38,11 +75,11 @@
         </section>
       </main>
 
-      <nav class="tabbar">
-        <a href="index.html" class="tab active"><span class="i">⌂</span><span>Dashboard</span></a>
-        <a href="tasks.html" class="tab"><span class="i">☑</span><span>Tasks</span></a>
-        <a href="stock.html" class="tab"><span class="i">◼</span><span>Stock</span></a>
-        <a href="more.html" class="tab"><span class="i">•••</span><span>More</span></a>
+      <nav class="tabbar" aria-label="Navigation principale">
+        <a href="#tile-dashboard" class="tab active"><span class="i">⬢</span><span>Dashboard</span></a>
+        <a href="#tile-tasks" class="tab"><span class="i">◎</span><span>Tasks</span></a>
+        <a href="#tile-stock" class="tab"><span class="i">▤</span><span>Stock</span></a>
+        <a href="#tile-more" class="tab"><span class="i">⋯</span><span>More</span></a>
       </nav>
     </div>
   </div>
