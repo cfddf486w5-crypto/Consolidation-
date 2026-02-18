@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WMS Tools - Historique des mises à jour</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="phone">
+    <div class="screen">
+      <header class="header">
+        <div class="header-top">
+          <a class="icon-btn" href="index.html" aria-label="Retour">🏠</a>
+          <div class="title">Historique des mises à jour</div>
+          <a class="icon-btn" href="settings.html" aria-label="Paramètres">⚙️</a>
+        </div>
+      </header>
+      <main class="content settings-page">
+        <section class="card-block">
+          <h2>Journal automatique</h2>
+          <p class="muted">Cette page ajoute automatiquement une entrée lors d’une nouvelle version détectée.</p>
+          <ul id="updateList" class="update-list"></ul>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="updates-history.js"></script>
+</body>
+</html>

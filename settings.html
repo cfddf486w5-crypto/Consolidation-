@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WMS Tools - Paramètres</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="phone">
+    <div class="screen">
+      <header class="header">
+        <div class="header-top">
+          <a class="icon-btn" href="index.html" aria-label="Retour">🏠</a>
+          <div class="title">Paramètres de l'application</div>
+          <a class="icon-btn" href="help.html" aria-label="Aide">❓</a>
+        </div>
+      </header>
+
+      <main class="content settings-page">
+        <section class="card-block">
+          <h2>Paramètres généraux</h2>
+          <div class="setting-grid">
+            <label>Thème visuel
+              <select id="themeMode">
+                <option value="dark">Mode sombre</option>
+                <option value="bright">Mode éclatant</option>
+              </select>
+            </label>
+            <label><input type="checkbox" id="a11yContrast" /> Contraste élevé</label>
+            <label><input type="checkbox" id="a11yFonts" /> Grande police</label>
+            <label><input type="checkbox" id="a11yMotion" /> Réduire les animations</label>
+            <button class="btn-settings" id="generateAccessibility" type="button">Générer des options d’accessibilité</button>
+          </div>
+          <p id="a11yOutput" class="info-text">Astuce: activez le mode sombre et le contraste élevé pour les opérations de nuit.</p>
+        </section>
+
+        <section class="card-block">
+          <h2>Paramètres importation</h2>
+          <p class="muted">Import Excel/PDF pour chaque rapport nécessaire.</p>
+          <div class="import-table-wrap">
+            <table class="import-table">
+              <thead><tr><th>Rapport</th><th>Import Excel</th><th>Import PDF</th></tr></thead>
+              <tbody>
+                <tr><td>Dashboard</td><td><input type="file" accept=".xlsx,.xls,.csv" /></td><td><input type="file" accept=".pdf" /></td></tr>
+                <tr><td>Consolidation</td><td><input type="file" accept=".xlsx,.xls,.csv" /></td><td><input type="file" accept=".pdf" /></td></tr>
+                <tr><td>Suivi expédition</td><td><input type="file" accept=".xlsx,.xls,.csv" /></td><td><input type="file" accept=".pdf" /></td></tr>
+                <tr><td>Remise en stock</td><td><input type="file" accept=".xlsx,.xls,.csv" /></td><td><input type="file" accept=".pdf" /></td></tr>
+                <tr><td>Réception ASN</td><td><input type="file" accept=".xlsx,.xls,.csv" /></td><td><input type="file" accept=".pdf" /></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="card-block">
+          <h2>Paramètre de règle consolidation / remise en stock</h2>
+          <div class="rule-tabs" role="tablist" aria-label="Règles par page">
+            <button class="rule-tab active" data-tab="dashboard" type="button">Dashboard</button>
+            <button class="rule-tab" data-tab="consolidation" type="button">Consolidation</button>
+            <button class="rule-tab" data-tab="suivi" type="button">Suivi expédition</button>
+            <button class="rule-tab" data-tab="remise" type="button">Remise en stock</button>
+            <button class="rule-tab" data-tab="reception" type="button">Réception ASN</button>
+          </div>
+          <div class="rule-panels">
+            <article class="rule-panel active" data-panel="dashboard"><h3>Règles Dashboard</h3><textarea placeholder="Inscrire une nouvelle règle à respecter pour le Dashboard..."></textarea></article>
+            <article class="rule-panel" data-panel="consolidation"><h3>Règles Consolidation</h3><textarea placeholder="Inscrire une nouvelle règle à respecter pour la consolidation..."></textarea></article>
+            <article class="rule-panel" data-panel="suivi"><h3>Règles Suivi expédition</h3><textarea placeholder="Inscrire une nouvelle règle à respecter pour le suivi expédition..."></textarea></article>
+            <article class="rule-panel" data-panel="remise"><h3>Règles Remise en stock</h3><textarea placeholder="Inscrire une nouvelle règle à respecter pour la remise en stock..."></textarea></article>
+            <article class="rule-panel" data-panel="reception"><h3>Règles Réception ASN</h3><textarea placeholder="Inscrire une nouvelle règle à respecter pour la réception ASN..."></textarea></article>
+          </div>
+        </section>
+
+        <section class="card-block">
+          <h2>Navigation rapide</h2>
+          <div class="quick-links">
+            <a href="history-updates.html">Historique des mises à jour</a>
+            <a href="help.html">Aide et support</a>
+          </div>
+        </section>
+      </main>
+
+      <nav class="tabbar" aria-label="Navigation principale">
+        <a href="index.html" class="tab"><span class="i">🏠</span><span>Dashboard</span></a>
+        <a href="consolidation.html" class="tab"><span class="i tab-icon"><img src="assets/icons/consolidation-ios-dark.png" alt="" aria-hidden="true"></span><span>Consol.</span></a>
+        <a href="tasks.html" class="tab"><span class="i tab-icon"><img src="assets/icons/suivi-expedition-ios-dark.png" alt="" aria-hidden="true"></span><span>Suivi</span></a>
+        <a href="remise.html" class="tab"><span class="i tab-icon"><img src="assets/icons/remise-ios-dark.png" alt="" aria-hidden="true"></span><span>Remise</span></a>
+        <a href="layout.html" class="tab"><span class="i tab-icon"><img src="assets/icons/layout-ios-dark.png" alt="" aria-hidden="true"></span><span>Layout</span></a>
+        <a href="reception.html" class="tab"><span class="i tab-icon"><img src="assets/icons/receiving-ios-dark.png" alt="" aria-hidden="true"></span><span>Réception</span></a>
+      </nav>
+    </div>
+  </div>
+
+  <script src="menu-settings.js"></script>
+</body>
+</html>
