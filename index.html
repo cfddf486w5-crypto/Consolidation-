@@ -14,7 +14,7 @@
           <button class="icon-btn" aria-label="Menu">
             <span class="line"></span><span class="line"></span><span class="line"></span>
           </button>
-          <div>WH01 - John <strong>WMS Tools</strong></div>
+          <div class="title">WH01 - John <strong>WMS Tools</strong></div>
           <div class="bell-wrap">
             <button class="icon-btn" aria-label="Notifications">🔔</button>
             <div class="badge">3</div>
@@ -24,43 +24,32 @@
 
       <div class="hero">
         <h1>WMS Tools</h1>
-        <p>Tableau principal mobile</p>
       </div>
 
       <main class="content">
         <section class="tiles">
           <a class="tile" id="tile-dashboard" href="index.html">
-            <div class="icon-box package" aria-hidden="true">
-              <span class="cube-top"></span>
-              <span class="cube-face"></span>
-            </div>
+            <div class="tile-icon green">📦</div>
             <div class="label">Consolidation</div>
           </a>
           <a class="tile" id="tile-stock" href="stock.html">
-            <div class="icon-box list" aria-hidden="true">
-              <span></span><span></span><span></span>
-            </div>
+            <div class="tile-icon blue">📋</div>
             <div class="label">Inventaire</div>
           </a>
           <a class="tile" id="tile-tasks" href="tasks.html">
-            <div class="icon-box scanner" aria-hidden="true">
-              <span class="beam"></span>
-              <span class="scanner-slot"></span>
-            </div>
+            <div class="tile-icon orange">🚚</div>
             <div class="label">Suivi Expédition</div>
           </a>
           <a class="tile" href="stock.html">
-            <div class="icon-box arrow" aria-hidden="true"><span>↩</span></div>
+            <div class="tile-icon purple">↩️</div>
             <div class="label">Remise en Stock</div>
           </a>
           <a class="tile" id="tile-more" href="more.html">
-            <div class="icon-box map" aria-hidden="true">
-              <span></span><span></span><span></span>
-            </div>
+            <div class="tile-icon violet">🗺️</div>
             <div class="label">Layout</div>
           </a>
           <a class="tile" href="tasks.html">
-            <div class="icon-box check" aria-hidden="true"><span>✓</span></div>
+            <div class="tile-icon lime">✅</div>
             <div class="label">Réception ASN</div>
           </a>
         </section>
@@ -68,16 +57,41 @@
         <section class="report">
           <h3>Rapport entrepôt</h3>
           <div class="report-grid">
-            <div class="chart">Commande et Expédition<br/><br/>🟢 13  🟠 5  🔵 12<br/><br/><strong>8 Produits &lt; 20</strong></div>
-            <div class="chart">Recommandés par Heure<br/><br/>Reçus 25<br/>Zone B 17<br/>Zone C 10</div>
+            <div class="chart pie-card">
+              <h4>Commande et Expédition</h4>
+              <div class="pie-wrap">
+                <div class="pie"></div>
+                <ul class="legend">
+                  <li><span class="dot dot-green"></span>13 Tn Transit</li>
+                  <li><span class="dot dot-orange"></span>5 Consolidé</li>
+                  <li><span class="dot dot-blue"></span>12 PRÉ</li>
+                </ul>
+              </div>
+              <p class="warning-count"><strong>8</strong> Produits &lt; 20</p>
+            </div>
+
+            <div class="chart bar-card">
+              <h4>Recommandés par Heure</h4>
+              <div class="bars">
+                <div class="bar b1"><span>25</span><small>Reçus</small></div>
+                <div class="bar b2"><span>17</span><small>Zone B</small></div>
+                <div class="bar b3"><span>10</span><small>Zone C</small></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mini-strip" aria-hidden="true">
+            <div class="mini-card">🌍</div>
+            <div class="mini-card">📦📦</div>
+            <div class="mini-card">📈</div>
           </div>
         </section>
       </main>
 
       <nav class="tabbar" aria-label="Navigation principale">
-        <a href="#tile-dashboard" class="tab active"><span class="i">⬢</span><span>Dashboard</span></a>
-        <a href="#tile-tasks" class="tab"><span class="i">◎</span><span>Tasks</span></a>
-        <a href="#tile-stock" class="tab"><span class="i">▤</span><span>Stock</span></a>
+        <a href="#tile-dashboard" class="tab active"><span class="i">🏠</span><span>Dashboard</span></a>
+        <a href="#tile-tasks" class="tab"><span class="i">☑️</span><span>Tasks</span></a>
+        <a href="#tile-stock" class="tab"><span class="i">🧊</span><span>Stock</span></a>
         <a href="#tile-more" class="tab"><span class="i">⋯</span><span>More</span></a>
       </nav>
     </div>
