@@ -24,8 +24,10 @@
 
       <main class="content">
         <section class="tiles">
-          <a class="tile" id="tile-dashboard" href="index.html">
-            <div class="tile-icon green">📦</div>
+          <a class="tile" id="tile-dashboard" href="consolidation.html">
+            <div class="tile-icon icon-consolidation green">
+              <img src="assets/icons/consolidation-ios-dark.svg" alt="Consolidation" />
+            </div>
             <div class="label">Consolidation</div>
           </a>
           <a class="tile" id="tile-stock" href="stock.html">
@@ -54,22 +56,18 @@
           <h3>Rapport entrepôt</h3>
           <div class="report-grid single-chart">
             <div class="chart pie-card">
-              <h4>Commande et Expédition</h4>
+              <h4 id="chart-title">Commande et Expédition - Laval</h4>
               <div class="pie-wrap">
-                <div class="pie"></div>
-                <ul class="legend">
-                  <li><span class="dot dot-green"></span>13 Tn Transit</li>
-                  <li><span class="dot dot-orange"></span>5 Consolidé</li>
-                  <li><span class="dot dot-blue"></span>12 PRÉ</li>
-                </ul>
+                <div class="pie" id="dashboard-pie"></div>
+                <ul class="legend" id="dashboard-legend"></ul>
               </div>
-              <p class="warning-count"><strong>8</strong> Produits &lt; 20</p>
+              <p class="warning-count" id="warning-count"></p>
             </div>
             <div class="location-strip" aria-label="Sites">
-              <span class="location-pill">Laval</span>
-              <span class="location-pill">5995</span>
-              <span class="location-pill">Jarry</span>
-              <span class="location-pill">Langelier</span>
+              <button class="location-pill active" type="button" data-site="laval">Laval</button>
+              <button class="location-pill" type="button" data-site="5995">5995</button>
+              <button class="location-pill" type="button" data-site="jarry">Jarry</button>
+              <button class="location-pill" type="button" data-site="langelier">Langelier</button>
             </div>
           </div>
 
@@ -83,10 +81,79 @@
 
       <nav class="tabbar" aria-label="Navigation principale">
         <a href="index.html" class="tab active"><span class="i">🏠</span><span>Dashboard</span></a>
-        <a href="stock.html" class="tab"><span class="i">📦</span><span>Consolidation</span></a>
+        <a href="consolidation.html" class="tab"><span class="i tab-icon"><img src="assets/icons/consolidation-ios-dark.svg" alt="" aria-hidden="true"></span><span>Consolidation</span></a>
         <a href="tasks.html" class="tab"><span class="i">🚚</span><span>Suivi Expédition</span></a>
       </nav>
     </div>
   </div>
+
+  <script>
+    const siteData = {
+      laval: {
+        title: 'Commande et Expédition - Laval',
+        values: [13, 5, 12],
+        labels: ['Tn Transit', 'Consolidé', 'PRÉ'],
+        lowStock: 8,
+      },
+      '5995': {
+        title: 'Commande et Expédition - 5995',
+        values: [9, 6, 14],
+        labels: ['Tn Transit', 'Consolidé', 'PRÉ'],
+        lowStock: 5,
+      },
+      jarry: {
+        title: 'Commande et Expédition - Jarry',
+        values: [7, 10, 11],
+        labels: ['Tn Transit', 'Consolidé', 'PRÉ'],
+        lowStock: 11,
+      },
+      langelier: {
+        title: 'Commande et Expédition - Langelier',
+        values: [15, 4, 8],
+        labels: ['Tn Transit', 'Consolidé', 'PRÉ'],
+        lowStock: 3,
+      },
+    };
+
+    const colors = ['#64b94e', '#f0b336', '#2175cb'];
+    const titleEl = document.getElementById('chart-title');
+    const pieEl = document.getElementById('dashboard-pie');
+    const legendEl = document.getElementById('dashboard-legend');
+    const warningEl = document.getElementById('warning-count');
+    const siteButtons = document.querySelectorAll('.location-pill');
+
+    function renderChart(siteKey) {
+      const data = siteData[siteKey];
+      if (!data) return;
+
+      titleEl.textContent = data.title;
+      const total = data.values.reduce((sum, value) => sum + value, 0);
+      let currentPercent = 0;
+      const parts = data.values.map((value, index) => {
+        const portion = (value / total) * 100;
+        const start = currentPercent;
+        const end = currentPercent + portion;
+        currentPercent = end;
+        return `${colors[index]} ${start}% ${end}%`;
+      });
+      pieEl.style.background = `conic-gradient(${parts.join(', ')})`;
+
+      legendEl.innerHTML = data.values
+        .map((value, index) => `<li><span class="dot" style="background:${colors[index]}"></span>${value} ${data.labels[index]}</li>`)
+        .join('');
+
+      warningEl.innerHTML = `<strong>${data.lowStock}</strong> Produits &lt; 20`;
+
+      siteButtons.forEach((button) => {
+        button.classList.toggle('active', button.dataset.site === siteKey);
+      });
+    }
+
+    siteButtons.forEach((button) => {
+      button.addEventListener('click', () => renderChart(button.dataset.site));
+    });
+
+    renderChart('laval');
+  </script>
 </body>
 </html>
