@@ -127,7 +127,7 @@ body {
 
 .content {
   padding: 18px 14px 14px;
-  padding-bottom: 84px;
+  padding-bottom: 96px;
 }
 
 .tiles {
@@ -337,7 +337,7 @@ body {
   position: sticky;
   bottom: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   background: #fff;
   border-top: 1px solid #d5dce8;
   box-shadow: 0 -5px 15px rgba(10, 39, 75, 0.12), 0 0 10px rgba(36, 200, 255, 0.2);
@@ -351,6 +351,9 @@ body {
   place-items: center;
   gap: 2px;
   font-weight: 600;
+  font-size: 11px;
+  text-align: center;
+  padding: 4px 2px;
   transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
