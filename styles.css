@@ -2,7 +2,13 @@
   --blue-1: #0d4f95;
   --blue-2: #1f6eba;
   --neon-blue: #24c8ff;
-  --bg: #ecf1f7;
+  --bg-1: #f4f7fc;
+  --bg-2: #edf2fa;
+  --bg-3: #e7eef8;
+  --bg-halo-1: rgba(255, 255, 255, 0.68);
+  --bg-halo-2: rgba(222, 233, 248, 0.55);
+  --bg-vignette: rgba(116, 136, 165, 0.13);
+  --bg: var(--bg-1);
   --panel: #ffffff;
   --text: #182131;
   --line: #d8dde7;
@@ -15,7 +21,13 @@ body {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  background: linear-gradient(180deg, #f5f8fd 0%, #e8eef7 100%);
+  background-color: var(--bg-1);
+  background-image:
+    radial-gradient(circle at 52% 34%, var(--bg-halo-1) 0%, rgba(255, 255, 255, 0) 44%),
+    radial-gradient(circle at 14% 16%, var(--bg-halo-2) 0%, rgba(222, 233, 248, 0) 46%),
+    linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 58%, var(--bg-3) 100%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0) 70%, var(--bg-vignette) 100%);
+  background-attachment: fixed;
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: var(--text);
 }
@@ -28,7 +40,13 @@ body {
 .screen {
   width: 100%;
   height: 100%;
-  background: var(--bg);
+  background-color: var(--bg-1);
+  background-image:
+    radial-gradient(circle at 50% 32%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 46%),
+    radial-gradient(circle at 82% 80%, rgba(224, 236, 251, 0.6) 0%, rgba(224, 236, 251, 0) 42%),
+    linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 60%, var(--bg-3) 100%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0) 74%, rgba(125, 145, 173, 0.11) 100%);
+  background-attachment: local;
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
