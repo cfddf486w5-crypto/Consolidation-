@@ -174,7 +174,8 @@ body {
 .tile-icon.violet { background: linear-gradient(145deg, #c7d1ff, #8d9be8); }
 .tile-icon.lime { background: linear-gradient(145deg, #d9f6be, #78c65d); }
 
-.tile-icon.icon-consolidation img {
+.tile-icon.icon-consolidation img,
+.tile-icon.icon-shipping img {
   width: 38px;
   height: 38px;
   object-fit: contain;
