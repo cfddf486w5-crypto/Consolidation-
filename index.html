@@ -3,47 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DL WMS</title>
+  <title>WMS Tools - Dashboard</title>
   <link rel="stylesheet" href="styles.css" />
-  <script defer src="vendor/xlsx.full.min.js"></script>
-  <script defer src="app.js"></script>
 </head>
 <body>
-  <div class="app-shell">
-    <aside class="sidebar glass">
-      <div class="brand">
-        <div class="logo">DL</div>
-        <div>
-          <h1>DL WMS</h1>
-          <p>Offline Operations</p>
+  <div class="phone">
+    <div class="screen">
+      <div class="status-bar"><span>9:41</span><span>▮▮▮ ◠</span></div>
+      <header class="header">
+        <div class="header-top">
+          <div class="menu-btn">☰</div>
+          <div>WH01 - John <strong>WMS Tools</strong></div>
+          <div class="bell-wrap"><div class="bell">🔔</div><div class="badge">3</div></div>
         </div>
-      </div>
-      <nav id="nav"></nav>
-      <div class="sidebar-footer">
-        <button class="btn btn-secondary" id="backupJsonBtn">Backup JSON</button>
-        <button class="btn btn-ghost" id="restoreJsonBtn">Restore JSON</button>
-        <input id="restoreJsonInput" type="file" accept="application/json" hidden />
-      </div>
-    </aside>
-
-    <main class="content">
-      <header class="topbar glass">
-        <div>
-          <h2 id="pageTitle">Accueil</h2>
-          <p id="pageSubtitle">Tableau de bord des modules</p>
-        </div>
-        <div class="status" id="dataStatus"></div>
       </header>
+      <div class="hero">WMS Tools</div>
 
-      <section id="view-dashboard" class="view active"></section>
-      <section id="view-v2" class="view"></section>
-      <section id="view-scan" class="view"></section>
-      <section id="view-consolidation" class="view"></section>
-      <section id="view-shipping" class="view"></section>
-      <section id="view-remise" class="view"></section>
-      <section id="view-history" class="view"></section>
-      <section id="view-settings" class="view"></section>
-    </main>
+      <main class="content">
+        <section class="tiles">
+          <a class="tile" href="index.html"><div class="icon">📦</div><div class="label">Consolidation</div></a>
+          <a class="tile" href="stock.html"><div class="icon">📋</div><div class="label">Inventaire</div></a>
+          <a class="tile" href="tasks.html"><div class="icon">🔎</div><div class="label">Suivi Expédition</div></a>
+          <a class="tile" href="stock.html"><div class="icon">↩️</div><div class="label">Remise en Stock</div></a>
+          <a class="tile" href="more.html"><div class="icon">🗺️</div><div class="label">Layout</div></a>
+          <a class="tile" href="tasks.html"><div class="icon">✅</div><div class="label">Réception ASN</div></a>
+        </section>
+
+        <section class="report">
+          <h3>Rapport entrepôt</h3>
+          <div class="report-grid">
+            <div class="chart">Commande et Expédition<br/><br/>🟢 13  🟠 5  🔵 12<br/><br/><strong>8 Produits &lt; 20</strong></div>
+            <div class="chart">Recommandés par Heure<br/><br/>Reçus 25<br/>Zone B 17<br/>Zone C 10</div>
+          </div>
+        </section>
+      </main>
+
+      <nav class="tabbar">
+        <a href="index.html" class="tab active"><span class="i">⌂</span><span>Dashboard</span></a>
+        <a href="tasks.html" class="tab"><span class="i">☑</span><span>Tasks</span></a>
+        <a href="stock.html" class="tab"><span class="i">◼</span><span>Stock</span></a>
+        <a href="more.html" class="tab"><span class="i">•••</span><span>More</span></a>
+      </nav>
+    </div>
   </div>
 </body>
 </html>
