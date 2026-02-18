@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DL WMS</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="vendor/xlsx.full.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar glass">
+      <div class="brand">
+        <div class="logo">DL</div>
+        <div>
+          <h1>DL WMS</h1>
+          <p>Offline Operations</p>
+        </div>
+      </div>
+      <nav id="nav"></nav>
+      <div class="sidebar-footer">
+        <button class="btn btn-secondary" id="backupJsonBtn">Backup JSON</button>
+        <button class="btn btn-ghost" id="restoreJsonBtn">Restore JSON</button>
+        <input id="restoreJsonInput" type="file" accept="application/json" hidden />
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="topbar glass">
+        <div>
+          <h2 id="pageTitle">Accueil</h2>
+          <p id="pageSubtitle">Tableau de bord des modules</p>
+        </div>
+        <div class="status" id="dataStatus"></div>
+      </header>
+
+      <section id="view-dashboard" class="view active"></section>
+      <section id="view-v2" class="view"></section>
+      <section id="view-scan" class="view"></section>
+      <section id="view-consolidation" class="view"></section>
+      <section id="view-shipping" class="view"></section>
+      <section id="view-remise" class="view"></section>
+      <section id="view-history" class="view"></section>
+      <section id="view-settings" class="view"></section>
+    </main>
+  </div>
+</body>
+</html>
