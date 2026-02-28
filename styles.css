@@ -583,3 +583,64 @@ body {
   transition: none !important;
   animation: none !important;
 }
+
+.settings-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-secondary {
+  border: 1px solid #c8d4e4;
+  border-radius: 10px;
+  background: #f4f8ff;
+  color: #1e4f80;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.kpi {
+  border: 1px solid #dbe4f0;
+  border-radius: 10px;
+  padding: 10px;
+  background: #f7fbff;
+  display: grid;
+  gap: 4px;
+  text-align: center;
+}
+
+.kpi strong {
+  font-size: 21px;
+  color: #0e4f90;
+}
+
+.kpi span {
+  font-size: 12px;
+  color: #3f526d;
+}
+
+.status-pill {
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.status-pill.warning {
+  background: #fff4df;
+  border: 1px solid #f0d195;
+  color: #845300;
+}
+
+.status-pill.success {
+  background: #eaf9ed;
+  border: 1px solid #afd9b7;
+  color: #1f6a31;
+}

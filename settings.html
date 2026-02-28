@@ -53,7 +53,7 @@
         </section>
 
         <section class="card-block">
-          <h2>Paramètre de règle consolidation / remise en stock</h2>
+          <h2>Règles par page</h2>
           <div class="rule-tabs" role="tablist" aria-label="Règles par page">
             <button class="rule-tab active" data-tab="dashboard" type="button">Dashboard</button>
             <button class="rule-tab" data-tab="consolidation" type="button">Consolidation</button>
@@ -62,11 +62,19 @@
             <button class="rule-tab" data-tab="reception" type="button">Réception ASN</button>
           </div>
           <div class="rule-panels">
-            <article class="rule-panel active" data-panel="dashboard"><h3>Règles Dashboard</h3><textarea placeholder="Inscrire une nouvelle règle à respecter pour le Dashboard..."></textarea></article>
-            <article class="rule-panel" data-panel="consolidation"><h3>Règles Consolidation</h3><textarea placeholder="Inscrire une nouvelle règle à respecter pour la consolidation..."></textarea></article>
-            <article class="rule-panel" data-panel="suivi"><h3>Règles Suivi expédition</h3><textarea placeholder="Inscrire une nouvelle règle à respecter pour le suivi expédition..."></textarea></article>
-            <article class="rule-panel" data-panel="remise"><h3>Règles Remise en stock</h3><textarea placeholder="Inscrire une nouvelle règle à respecter pour la remise en stock..."></textarea></article>
-            <article class="rule-panel" data-panel="reception"><h3>Règles Réception ASN</h3><textarea placeholder="Inscrire une nouvelle règle à respecter pour la réception ASN..."></textarea></article>
+            <article class="rule-panel active" data-panel="dashboard"><h3>Règles Dashboard</h3><textarea data-rule-key="dashboard" placeholder="Inscrire une nouvelle règle à respecter pour le Dashboard..."></textarea></article>
+            <article class="rule-panel" data-panel="consolidation"><h3>Règles Consolidation</h3><textarea data-rule-key="consolidation" placeholder="Inscrire une nouvelle règle à respecter pour la consolidation..."></textarea></article>
+            <article class="rule-panel" data-panel="suivi"><h3>Règles Suivi expédition</h3><textarea data-rule-key="suivi" placeholder="Inscrire une nouvelle règle à respecter pour le suivi expédition..."></textarea></article>
+            <article class="rule-panel" data-panel="remise"><h3>Règles Remise en stock</h3><textarea data-rule-key="remise" placeholder="Inscrire une nouvelle règle à respecter pour la remise en stock..."></textarea></article>
+            <article class="rule-panel" data-panel="reception"><h3>Règles Réception ASN</h3><textarea data-rule-key="reception" placeholder="Inscrire une nouvelle règle à respecter pour la réception ASN..."></textarea></article>
+          </div>
+        </section>
+
+        <section class="card-block">
+          <h2>Actions rapides</h2>
+          <div class="settings-actions">
+            <button class="btn-settings" id="savePreferences" type="button">Sauvegarder mes préférences</button>
+            <button class="btn-secondary" id="resetPreferences" type="button">Réinitialiser</button>
           </div>
         </section>
 
@@ -90,6 +98,7 @@
     </div>
   </div>
 
+  <script src="wms-preferences.js"></script>
   <script src="menu-settings.js"></script>
 </body>
 </html>
